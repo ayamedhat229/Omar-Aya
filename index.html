@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar & Aya — Engagement Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="openScreen">
+  <div class="open-content">
+    <h1>Omar & Aya</h1>
+    <button id="openBtn">Open Invitation 💌</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="myAudio" src="song.mp3"></audio>
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+
+    <!-- hidden SVG defs – rose shape defined once, reused 4 times -->
+    <svg width="0" height="0" style="position:absolute;overflow:hidden">
+      <defs>
+        <g id="rbunch">
+          <!-- main stem -->
+          <path d="M80 270 Q92 205 115 172 Q135 142 155 100"
+                stroke="#7a9e6a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- side branches -->
+          <path d="M97 222 Q72 212 56 196"
+                stroke="#7a9e6a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M122 167 Q147 157 162 142"
+                stroke="#7a9e6a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- green leaves -->
+          <ellipse cx="50"  cy="193" rx="15" ry="7"   fill="#6b9060" transform="rotate(-30 50 193)"/>
+          <ellipse cx="164" cy="140" rx="14" ry="6"   fill="#6b9060" transform="rotate(-50 164 140)"/>
+          <ellipse cx="110" cy="174" rx="12" ry="5.5" fill="#82a870" transform="rotate(22 110 174)"/>
+          <!-- gold leaf tips -->
+          <ellipse cx="40"  cy="178" rx="10" ry="4.5" fill="#d4af60" opacity=".75" transform="rotate(-38 40 178)"/>
+          <ellipse cx="176" cy="124" rx="9"  ry="4"   fill="#d4af60" opacity=".75" transform="rotate(-58 176 124)"/>
+          <ellipse cx="182" cy="89"  rx="8"  ry="3.5" fill="#d4af60" opacity=".65" transform="rotate(-18 182 89)"/>
+          <ellipse cx="163" cy="100" rx="7"  ry="3"   fill="#d4af60" opacity=".55" transform="rotate(-30 163 100)"/>
+          <!-- small buds -->
+          <ellipse cx="56"  cy="186" rx="5"   ry="8"   fill="#f2bcc8" transform="rotate(-22 56 186)"/>
+          <ellipse cx="163" cy="133" rx="5"   ry="7.5" fill="#f2bcc8" transform="rotate(-42 163 133)"/>
+          <ellipse cx="171" cy="96"  rx="4.5" ry="7"   fill="#f5ccd4" transform="rotate(-12 171 96)"/>
+          <!-- BIG ROSE -->
+          <g transform="translate(108,158)">
+            <circle r="40" fill="#fae0e6"/>
+            <ellipse cx="-23" cy="11"  rx="24" ry="15" fill="#f5ccd4" transform="rotate(-22)"/>
+            <ellipse cx="23"  cy="11"  rx="24" ry="15" fill="#f5ccd4" transform="rotate(22)"/>
+            <ellipse cx="0"   cy="-25" rx="21" ry="14" fill="#f5ccd4"/>
+            <ellipse cx="-19" cy="-19" rx="19" ry="12" fill="#f0bcc6" transform="rotate(-42)"/>
+            <ellipse cx="19"  cy="-19" rx="19" ry="12" fill="#f0bcc6" transform="rotate(42)"/>
+            <ellipse cx="-26" cy="0"   rx="16" ry="11" fill="#eeafc0" transform="rotate(-12)"/>
+            <ellipse cx="26"  cy="0"   rx="16" ry="11" fill="#eeafc0" transform="rotate(12)"/>
+            <ellipse cx="0"   cy="22"  rx="17" ry="11" fill="#eeb4c2"/>
+            <circle r="17" fill="#f0b8c6"/>
+            <circle r="10" fill="#e898b2"/>
+            <circle cx="-2" cy="-2" r="5.5" fill="#e07aa8"/>
+          </g>
+          <!-- SMALL ROSE -->
+          <g transform="translate(55,232)">
+            <circle r="30" fill="#fae8ec"/>
+            <ellipse cx="-18" cy="8"   rx="19" ry="12" fill="#f5ccd4" transform="rotate(-20)"/>
+            <ellipse cx="18"  cy="8"   rx="19" ry="12" fill="#f5ccd4" transform="rotate(20)"/>
+            <ellipse cx="0"   cy="-20" rx="17" ry="11" fill="#f5ccd4"/>
+            <ellipse cx="-14" cy="-14" rx="15" ry="9"  fill="#f0bcc6" transform="rotate(-40)"/>
+            <ellipse cx="14"  cy="-14" rx="15" ry="9"  fill="#f0bcc6" transform="rotate(40)"/>
+            <circle r="12" fill="#f0b8c4"/>
+            <circle r="7"  fill="#e898b0"/>
+            <circle cx="-1" cy="-1" r="4" fill="#e07aa8"/>
+          </g>
+        </g>
+      </defs>
+    </svg>
+
+    <!-- top-left -->
+    <svg class="rose rose-tl" viewBox="0 0 260 285" xmlns="http://www.w3.org/2000/svg">
+      <use href="#rbunch"/>
+    </svg>
+    <!-- top-right: mirror X -->
+    <svg class="rose rose-tr" viewBox="0 0 260 285" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(260,0) scale(-1,1)"><use href="#rbunch"/></g>
+    </svg>
+    <!-- bottom-left: mirror Y -->
+    <svg class="rose rose-bl" viewBox="0 0 260 285" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(0,285) scale(1,-1)"><use href="#rbunch"/></g>
+    </svg>
+    <!-- bottom-right: mirror both -->
+    <svg class="rose rose-br" viewBox="0 0 260 285" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(260,285) scale(-1,-1)"><use href="#rbunch"/></g>
+    </svg>
+
+    <div class="reveal hero-content">
+      <p class="hero-sub">You are cordially invited to the</p>
+      <p class="hero-ceremony">Engagement Ceremony</p>
+
+      <div class="divider" style="max-width:180px;">
+        <div class="div-line"></div>
+        <span class="div-star">✦</span>
+        <div class="div-line"></div>
+      </div>
+
+      <div class="names-wrap">
+        <span class="name name-omar">Omar</span>
+        <span class="heart-sep">♡</span>
+        <span class="name name-aya">Aya</span>
+      </div>
+
+      <div class="divider" style="max-width:180px;">
+        <div class="div-line"></div>
+        <span class="div-star">✦</span>
+        <div class="div-line"></div>
+      </div>
+
+      <p class="hero-quote">"Two souls, one heart — beginning a beautiful journey together."</p>
+    </div>
+  </section>
+
+  <!-- ══ SAVE DATE ══ -->
+  <section class="save-date reveal">
+    <h2 class="sec-title">Save the Date</h2>
+    <div class="divider">
+      <div class="div-line"></div>
+      <span class="div-star">✦</span>
+      <div class="div-line"></div>
+    </div>
+    <div class="date-list">
+      <div class="date-row">
+        <span class="date-ico">📅</span>
+        <span>Friday, April 17, 2026</span>
+      </div>
+      <div class="date-row">
+        <span class="date-ico">🕖</span>
+        <span>7:00 PM Onwards</span>
+      </div>
+      <div class="date-row">
+        <span class="date-ico">📍</span>
+        <span>10th of Ramadan City, Egypt</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN ══ -->
+  <section class="countdown reveal">
+    <h2 class="sec-title">Counting Down</h2>
+    <div class="divider">
+      <div class="div-line"></div>
+      <span class="div-star">✦</span>
+      <div class="div-line"></div>
+    </div>
+    <div class="cd-grid">
+      <div class="cd-box">
+        <span class="cd-num" id="d">00</span>
+        <span class="cd-lbl">Days</span>
+      </div>
+      <div class="cd-box">
+        <span class="cd-num" id="h">00</span>
+        <span class="cd-lbl">Hours</span>
+      </div>
+      <div class="cd-box">
+        <span class="cd-num" id="m">00</span>
+        <span class="cd-lbl">Min</span>
+      </div>
+      <div class="cd-box">
+        <span class="cd-num" id="s">00</span>
+        <span class="cd-lbl">Sec</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MAP ══ -->
+  <section class="map-sec reveal">
+    <h2 class="sec-title">Our Location</h2>
+    <div class="divider">
+      <div class="div-line"></div>
+      <span class="div-star">✦</span>
+      <div class="div-line"></div>
+    </div>
+    <div class="map-frame">
+      <iframe
+        src="https://maps.google.com/maps?q=10th+of+Ramadan+City,+Egypt&output=embed&z=13"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <a href="https://maps.google.com/?q=10th+of+Ramadan+City+Egypt" target="_blank" class="map-btn">
+      Open in Google Maps
+    </a>
+  </section>
+
+  <!-- ══ BLESSINGS ══ -->
+  <section class="blessings reveal">
+    <h2 class="sec-title">With the Blessings of</h2>
+    <div class="divider">
+      <div class="div-line"></div>
+      <span class="div-star">✦</span>
+      <div class="div-line"></div>
+    </div>
+    <div class="bless-grid">
+      <div class="bless-card">
+        <p class="bless-role">Bride's Family</p>
+        <p class="bless-name">Medhat Family</p>
+        <p class="bless-sub">Parents of the Bride</p>
+      </div>
+      <div class="bless-card">
+        <p class="bless-role">Groom's Family</p>
+        <p class="bless-name">Yasser Family</p>
+        <p class="bless-sub">Parents of the Groom</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CLOSING ══ -->
+  <section class="closing reveal">
+    <span class="close-heart">♡</span>
+    <p class="close-label">We look forward to celebrating with you</p>
+    <p class="close-names">Omar &amp; Aya</p>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
