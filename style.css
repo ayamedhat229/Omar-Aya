@@ -429,19 +429,23 @@ body {
 #openScreen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(170deg, #fdf0f5, #fdf7f0);
+  background: #fdf5f0; 
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 1s ease;
+  overflow: hidden;
 }
 
 #openScreen.hide {
   opacity: 0;
   pointer-events: none;
 }
-
+@media (max-width: 768px) {
+  #envelopeImg {
+    object-fit: cover;
+  }
+}
 .open-content {
   text-align: center;
 }
@@ -536,4 +540,21 @@ body {
   0% { box-shadow: 0 0 0px rgba(201,106,122,0.3); }
   50% { box-shadow: 0 0 20px rgba(201,106,122,0.6); }
   100% { box-shadow: 0 0 0px rgba(201,106,122,0.3); }
+}
+#envelopeImg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* أهم حاجة */
+  cursor: pointer;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+#envelopeImg:hover {
+  transform: scale(1.05);
+}
+
+
+#envelopeImg.open {
+  transform: scale(1.2) rotate(-3deg);
+  opacity: 0;
 }

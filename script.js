@@ -87,45 +87,31 @@ function spawnSparkle() {
 /* ════════════════════════════════
    OPEN INVITATION + MUSIC
 ════════════════════════════════ */
-window.addEventListener('DOMContentLoaded', () => {
+const envelope = document.getElementById('envelopeImg');
+const openScreen = document.getElementById('openScreen');
+const audio = document.getElementById('myAudio');
 
-  const openBtn = document.getElementById('openBtn');
-  const openScreen = document.getElementById('openScreen');
-  const audio = document.getElementById('myAudio');
-
-  if (!openBtn || !audio) {
-    console.log("❌ Button or audio not found");
-    return;
-  }
-
-  openBtn.addEventListener('click', () => {
+envelope.addEventListener('click', () => {
 
 
-    audio.currentTime = 0;
-    audio.volume = 0;
-
-    audio.play().catch(err => console.log("Play error:", err));
+  envelope.classList.add('open');
 
 
-    let vol = 0;
-    const fade = setInterval(() => {
-      if (vol < 1) {
-        vol += 0.05;
-        audio.volume = vol;
-      } else {
-        clearInterval(fade);
-      }
-    }, 200);
+  audio.currentTime = 0;
+  audio.volume = 0;
+  audio.play().catch(err => console.log(err));
 
-
-    openScreen.classList.add('hide');
-  });
-
-
-  audio.addEventListener('timeupdate', () => {
-    if (audio.currentTime >= 20) {
-      audio.currentTime = 0;
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 1) {
+      vol += 0.05;
+      audio.volume = vol;
+    } else {
+      clearInterval(fade);
     }
-  });
+  }, 200);
 
+  setTimeout(() => {
+    openScreen.classList.add('hide');
+  }, 700);
 });
